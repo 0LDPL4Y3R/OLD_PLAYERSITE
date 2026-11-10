@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApeWeb - Твой интернет</title>
+    <style>
+        body { background-color: #121212; color: #fff; font-family: Arial, sans-serif; text-align: center; padding: 50px 20px; margin: 0; }
+        h1 { color: #ff8c00; font-size: 48px; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255,140,0,0.5); }
+        p { color: #aaa; margin-bottom: 40px; }
+        .search-box { display: flex; justify-content: center; gap: 10px; max-width: 400px; margin: 0 auto 40px auto; }
+        input { flex: 1; padding: 15px; border-radius: 25px; border: 2px solid #ff8c00; background: #1e1e1e; color: #fff; font-size: 16px; outline: none; }
+        button { padding: 15px 25px; border-radius: 25px; border: none; background: #ff8c00; color: #121212; font-weight: bold; font-size: 18px; cursor: pointer; }
+        .links { display: flex; flex-direction: column; gap: 15px; max-width: 300px; margin: 0 auto; }
+        .link-btn { background: #1e1e1e; border: 2px solid #ff8c00; color: #ff8c00; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 16px; transition: 0.3s; }
+        .link-btn:hover { background: #ff8c00; color: #121212; }
+    </style>
+</head>
+<body>
+
+    <h1>🦍 ApeWeb</h1>
+    <p>Твой личный портал в интернете</p>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Найти в интернете..." onkeypress="if(event.key==='Enter') search()">
+        <button onclick="search()">➤</button>
+    </div>
+
+    <div class="links">
+        <a href="https://www.roblox.com" class="link-btn" target="_blank">🎮 Играть в Roblox</a>
+        <a href="https://ru.wikipedia.org/wiki/Lethal_Ape" class="link-btn" target="_blank">🦍 Lethal Ape Wiki</a>
+        <a href="https://www.youtube.com" class="link-btn" target="_blank">📺 YouTube</a>
+    </div>
+
+    <script>
+        function search() {
+            const q = document.getElementById('searchInput').value;
+            if(q) {
+                // Используем Yep.com, так как он нормально относится к переходам
+                window.location.href = "https://yep.com/web?q=" + encodeURIComponent(q);
+            }
+        }
+    </script>
+</body>
+</html>
